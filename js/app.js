@@ -1,24 +1,14 @@
-setInterval(function () {
-    slide();
+const carouselSlide = document.querySelector('.carousel-slide');
+const carouselImages = document.querySelectorAll('.carousel-slide img');
 
-}, 5000);
+//Buttons
 
-function slide() {
-    let activeSlide = document.querySelector('div.slider-item.active'),
-        nextSlide = activeSlide.nextElementSibling;
+const prevBTN = document.querySelector('#prevBTN');
+const nextBTN = document.querySelector('#nextBTN');
 
-    if (!nextSlide) {
-        nextSlide = document.querySelector('div#masthead2 div.slider-item:first-of-type');
-    }
+//Counter
 
+let counter = 1;
+const size = carouselImages[0].clientWidth;
 
-    activeSlide.classList.remove('active');
-    activeSlide.classList.add('sliding');
-
-    nextSlide.classList.add('active');
-
-    setTimeout(function () {
-        document.querySelector('div.slider-item.sliding').classList.remove('sliding');
-    }, 800);
-
-}
+carouselSlide.style.transform = 'translateX('+ (-size * counter) + 'px)';
