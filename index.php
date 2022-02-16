@@ -10,6 +10,8 @@
 
 <?php include("./php/header.php");?>
 
+<?php include("./php/footer.php");?>
+
 <script src="js/app.js"></script>
 
 </body>
